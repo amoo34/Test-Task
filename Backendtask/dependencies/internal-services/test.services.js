@@ -1,4 +1,3 @@
-const mongoose = require(`mongoose`);
 // importing required schema models
 const Task = require(`../../api/models/task.model`);
 const User = require(`../../api/models/user.model`);
