@@ -7,12 +7,6 @@ const {
   connectDatabase,
   disconnectDatabase,
 } = require(`./dependencies/helpers/database.helpers.js`);
-// const {
-//   logSuccess,
-//   logInfo,
-//   logWarning,
-//   logError,
-// } = require(`./dependencies/helpers/console.helpers`);
 
 const { testRouter } = require(`./api/routers/test.router`);
 
@@ -39,16 +33,9 @@ app.use(express.json());
         limit: "50mb",
       })
     );
-    app.use(
-      express.urlencoded({
-        limit: "50mb",
-        parameterLimit: 100000,
-        extended: true,
-      })
-    );
+    app.use(express.urlencoded());
 
     app.use("/", testRouter);
-    // app.use("/api", taskRouter);
 
     // making connection to database
     await connectDatabase();
@@ -56,9 +43,5 @@ app.use(express.json());
     app.listen(3000, () => {
       console.log("Listening at Port 3000");
     });
-  } catch (error) {
-    // this code runs in case of an ERROR @ runtime
-    // logging error message to the console
-    // logError(`ERROR @ Server Initialization Process.`, error);
-  }
+  } catch (error) {}
 })();

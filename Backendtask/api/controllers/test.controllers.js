@@ -1,6 +1,5 @@
 // importing required packages and modules
 const mongoose = require(`mongoose`);
-// const { logWarning, logError } = require(`../../dependencies/helpers/console.helpers`);
 
 // importing required controllers
 const {

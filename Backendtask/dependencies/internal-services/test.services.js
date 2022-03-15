@@ -1,13 +1,10 @@
 const mongoose = require(`mongoose`);
-// const { logWarning, logError } = require(`../helpers/console.helpers`);
 // importing required schema models
 const Task = require(`../../api/models/task.model`);
+const User = require(`../../api/models/user.model`);
 
 const bcrypt = require("bcrypt");
-// const { logWarning, logError } = require(`../helpers/console.helpers`);
 const JWT = require("jsonwebtoken");
-// importing required schema models
-const User = require(`../../api/models/user.model`);
 
 const getUserService = async () => {
   try {
